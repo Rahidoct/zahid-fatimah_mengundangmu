@@ -66,25 +66,35 @@
     });
 
     function updateCountdown() {
-        let eventDate = new Date("April 4, 2025 00:00:00").getTime();
         let now = new Date().getTime();
+        
+        let startEvent = new Date("April 4, 2025 09:00:00").getTime();
+        let endEvent = new Date("April 4, 2025 22:00:00").getTime();
+        let eventDate = new Date("April 4, 2025 00:00:00").getTime();
+    
         let timeLeft = eventDate - now;
-
+    
+        if (now >= startEvent && now <= endEvent) {
+            document.getElementById("countdown").innerHTML = "<h3>Acara Sedang Berlangsung!</h3>";
+            return;
+        } 
+        
+        if (now > endEvent) {
+            document.getElementById("countdown").innerHTML = "<h3>Acara Telah Selesai!</h3>";
+            return;
+        }
+    
         let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
+    
         document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
         document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
         document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
         document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
-
-        if (timeLeft < 0) {
-            document.getElementById("countdown").innerHTML = "Acara Sedang Berlangsung!";
-        }
     }
-
+    
     setInterval(updateCountdown, 1000);
     updateCountdown();
 

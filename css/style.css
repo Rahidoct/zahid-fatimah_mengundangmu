@@ -9655,6 +9655,7 @@ a.text-dark:hover, a.text-dark:focus {
 .time-box small {
   font-size: 14px;
   font-weight: bold;
+  color: #000000;
 }
 
 @keyframes pulse-border {
