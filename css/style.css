@@ -9620,6 +9620,43 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom: 11px solid transparent;
 }
 
+.countdown-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.countdown-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.time-box span {
+  font-size: 32px;
+  font-weight: bold;
+  color: #E47A2E;
+  display: block;
+}
+
+.time-box small {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 @keyframes pulse-border {
   0% {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
