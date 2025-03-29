@@ -27,6 +27,16 @@
         }
     });
 
+    document.getElementById("scrollButton").addEventListener("click", function(event) {
+        event.preventDefault();
+
+        // Scroll ke bagian about
+        document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
+
+        // Mainkan musik
+        let music = document.getElementById("backgroundMusic");
+        music.play();
+    });
 
     // Modal Video
     $(document).ready(function () {
